@@ -109,6 +109,8 @@ public class LogPanel extends BlokusPanel implements ActionListener, GameListene
 	public void onRoundEnded(RoundEvent re) {
 		if(re.winner != null){
 			content.append("\nWinner is "+re.winner.getName()+"\n");
+			content.append("Player1 score is "+re.startPlayer.countScore()+"\n");
+			content.append("Player2 score is "+re.opponent.countScore()+"\n");
 		}else{
 			content.append("\nNo winner\n");
 		}

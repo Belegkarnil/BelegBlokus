@@ -104,8 +104,16 @@ public class Game implements Runnable{
         Player winner = null;
         do{
             executeTurn();
-            if(players[0].getPieces().isEmpty() || players[1].countSkip() >= skipLimit) winner = players[0];
-            else if(players[1].getPieces().isEmpty() || players[0].countSkip() >= skipLimit) winner = players[1];
+            if(     (players[0].getPieces().isEmpty() || players[0].countSkip() >= skipLimit)
+                &&  (players[1].getPieces().isEmpty() || players[1].countSkip() >= skipLimit)
+            ){
+                // Round end, winner is the one with the lowest score
+                if(players[0].countScore() < players[1].countScore()) winner = players[0];
+                else if(players[1].countScore() < players[0].countScore()) winner = players[1];
+                else{ // Tie
+                    winner = players[0].getPieces().isEmpty() || players[1].countSkip()  >= skipLimit ? players[0] : players[1];
+                }
+            }
         }while(winner == null);
         winner.win();
         fireEnded(new RoundEvent(this,players[0],this.players[1],round,winner));

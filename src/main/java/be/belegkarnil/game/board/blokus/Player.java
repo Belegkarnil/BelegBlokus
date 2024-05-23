@@ -65,6 +65,11 @@ public class Player implements Externalizable {
     public int countSkip(){
         return skip;
     }
+    public int countScore(){
+        int sum = 0;
+        for(Piece piece : pieces) sum += piece.countTiles();
+        return sum;
+    }
 
     public void win(){
         win++;
