@@ -50,7 +50,7 @@ public class MainFrame extends JFrame{
 		board = new Board();
 		
 		boardPanel		= new BoardPanel(board);
-		logPanel			= new LogPanel();
+		logPanel		= new LogPanel();
 		settingsPanel	= new SettingsPanel(board);
 		piecesPanel		= new PiecesPanel();
 		timePanel		= new TimePanel();

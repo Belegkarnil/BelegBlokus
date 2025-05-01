@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"be.belegkarnil.game.board.blokus"},{"l":"be.belegkarnil.game.board.blokus.event"},{"l":"be.belegkarnil.game.board.blokus.gui"},{"l":"be.belegkarnil.game.board.blokus.strategy"}];updateSearchResults();
